@@ -1,0 +1,23 @@
+Define a class Bag<T> with:
+    - ArrayList<T> elements to store bag items
+
+Methods:
+    - void add(T item): Add item to elements list
+    - int size(): Return the size of elements list
+    - void merge(Bag<T> otherBag): Add all elements from otherBag to this bag
+    - Bag<T> distinct(): 
+        Create new Bag<T> distinctBag
+        For each item in elements:
+            If item is not already in distinctBag.elements:
+                Add item to distinctBag
+        Return distinctBag
+
+Main Program:
+    - Create Bag<String> bag1
+    - Create Bag<String> bag2
+    - Add items (with duplicates) to bag1 and bag2
+    - Print size of bag1 and bag2
+    - Merge bag2 into bag1
+    - Print contents of merged bag1
+    - Create distinctBag from bag1
+    - Print contents of distinctBag
