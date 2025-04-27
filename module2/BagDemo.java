@@ -1,5 +1,4 @@
 package module2;
-
 import java.util.ArrayList;
 
 class Bag<T> {
@@ -25,7 +24,7 @@ class Bag<T> {
         elements.addAll(otherBag.elements);
     }
 
-    // Return a new bag with only distinct elements
+    // Return a new bag with only distinct elements.
     public Bag<T> distinct() {
         Bag<T> distinctBag = new Bag<>();
         for (T item : elements) {
