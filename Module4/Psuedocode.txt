@@ -1,0 +1,28 @@
+PROGRAM PostfixCalculator
+    CREATE calculator as a new PostfixCalculator object
+
+    // Test Case 1: Single-digit operands
+    DISPLAY "Test Case 1: Single-digit operands"
+    SET expression1 = "4 2 * 3 +"
+    DISPLAY "Expression: " + expression1
+    DISPLAY "Result: " + calculator.evaluatePostfix(expression1)
+    DISPLAY blank line
+
+    // Test Case 2: Multi-digit operands
+    DISPLAY "Test Case 2: Multi-digit operands"
+    SET expression2 = "53 7 + 8 *"
+    DISPLAY "Expression: " + expression2
+    DISPLAY "Result: " + calculator.evaluatePostfix(expression2)
+    DISPLAY blank line
+
+    // Test Case 3: Invalid expression
+    DISPLAY "Test Case 3: Invalid expression"
+    SET expression3 = "4 2 * +"
+    DISPLAY "Expression: " + expression3
+    DISPLAY "Result: " + calculator.evaluatePostfix(expression3)
+    DISPLAY blank line
+
+    // Test Case 4: Read from file
+    DISPLAY "Test Case 4: Reading from file"
+    CALL calculator.evaluateFromFile("C:/CSC400-Projects/Module4/expressions.txt")
+END PROGRAM
