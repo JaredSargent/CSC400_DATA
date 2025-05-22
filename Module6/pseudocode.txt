@@ -1,0 +1,86 @@
+// Class CustomLinkedList
+Class CustomLinkedList
+    Node head // Reference to the first node
+
+    // Inner class Node
+    Class Node
+        int data
+        Node next
+        Constructor Node(int data)
+            this.data = data
+            this.next = null
+        End Constructor
+    End Class
+
+    // Insert a new node with given data
+    Method insert(int data)
+        Create new Node newNode with data
+        If head is null
+            Set head to newNode
+        Else
+            Set current to head
+            While current.next is not null
+                Move current to current.next
+            End While
+            Set current.next to newNode
+        End If
+    End Method
+
+    // Delete the first occurrence of a node with given data
+    Method delete(int data)
+        If head is null
+            Return false
+        End If
+        If head.data equals data
+            Set head to head.next
+            Return true
+        End If
+        Set current to head
+        While current.next is not null
+            If current.next.data equals data
+                Set current.next to current.next.next
+                Return true
+            End If
+            Move current to current.next
+        End While
+        Return false
+    End Method
+
+    // Return an iterator
+    Method iterator()
+        Return new LinkedListIterator
+    End Method
+
+    // Inner class LinkedListIterator implementing Iterator<Integer>
+    Class LinkedListIterator
+        Node current = head
+
+        Method hasNext()
+            Return current is not null
+        End Method
+
+        Method next()
+            If not hasNext()
+                Throw NoSuchElementException
+            End If
+            Store current.data in data
+            Move current to current.next
+            Return data
+        End Method
+    End Class
+
+    // Read integers from a file
+    Method readFromFile(String filename)
+        Open file filename for reading
+        While there is a line to read
+            Parse line as integer data
+            If parsing successful
+                Call insert(data)
+            Else
+                Print error for invalid integer
+            End If
+        End While
+        Close file
+        Handle IOException by printing error
+    End Method
+End Class
